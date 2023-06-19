@@ -28,7 +28,6 @@ class AddTask extends Component {
   };
 
   handleClick = () => {
-    console.log("dodaj");
     const { text, checked, date } = this.state;
     if (text.length > 2) {
       const add = this.props.add(text, date, checked);
@@ -40,7 +39,7 @@ class AddTask extends Component {
         });
       }
     } else {
-      alert("wypad");
+      alert("Add a task");
     }
   };
 
@@ -52,7 +51,7 @@ class AddTask extends Component {
       <div className="form">
         <input
           type="text"
-          placeholder="Dodaj zadanie :)"
+          placeholder="Add task :)"
           value={this.state.text}
           onChange={this.hanldeText}
         />
@@ -62,9 +61,9 @@ class AddTask extends Component {
           id="important"
           onChange={this.hanldeCheckbox}
         />
-        <label htmlFor="important"> Priorytet </label>
+        <label htmlFor="important"> Priority </label>
         <br />
-        <label htmlFor="date"> Do kiedy zrobić </label>
+        <label htmlFor="date"> Deadline </label>
         <input
           type="date"
           value={this.state.date}
@@ -73,7 +72,7 @@ class AddTask extends Component {
           onChange={this.handleDate}
         />
         <br />
-        <button onClick={this.handleClick}>Dodaj</button>
+        <button onClick={this.handleClick}>Add</button>
       </div>
     );
   }

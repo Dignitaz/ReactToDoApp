@@ -53,11 +53,6 @@ class App extends Component {
 
   deleteTask = (id) => {
     let tasks = [...this.state.tasks];
-    // const index = tasks.findIndex((task) => task.id === id);
-    // tasks.splice(index, 1);
-    // this.setState({
-    //   tasks: tasks,
-    // });
     tasks = tasks.filter((task) => task.id !== id);
     console.log(tasks);
     this.setState({
@@ -79,7 +74,6 @@ class App extends Component {
   };
 
   addTask = (text, date, important) => {
-    console.log("dodany obiekt");
     const task = {
       id: this.counter,
       text: text,
